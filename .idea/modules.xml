@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SQLInterface.iml" filepath="$PROJECT_DIR$/.idea/SQLInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQLInterface.iml" filepath="$PROJECT_DIR$/SQLInterface.iml" />
     </modules>
   </component>
 </project>
