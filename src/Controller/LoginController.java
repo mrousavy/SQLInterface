@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -46,6 +47,12 @@ public class LoginController {
         } catch (SQLException ex) {
             _logger.Log(ex);
             ex.printStackTrace();
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login error");
+            alert.setHeaderText("Could not login with the user \"" + user + "\"!");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
         } catch (IOException ex) {
             _logger.Log(Logger.Severity.Error, "Cannot create tables Window!");
         }
