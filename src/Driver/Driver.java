@@ -16,7 +16,7 @@ public class Driver {
     }
 
     public static Connection connect(String server, String database, String user, String password) throws SQLException {
-        _logger.Log(Logger.Severity.Info, "Connecting...\n");
+        _logger.Log(Logger.Severity.Debug, "Connecting...");
         String connectionString = buildConnectionString(server, database, user, password);
         return DriverManager.getConnection(connectionString);
     }

@@ -6,9 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="SQLInterface.LoginController"
-            prefHeight="750.0" prefWidth="500.0">
-
+<AnchorPane prefHeight="250.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SQLInterface.LoginController">
+   <children>
+      <Button layoutX="183.0" layoutY="167.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
+      <TextField layoutX="124.0" layoutY="86.0" />
+      <TextField layoutX="124.0" layoutY="125.0" />
+   </children>
 </AnchorPane>
