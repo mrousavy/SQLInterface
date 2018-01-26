@@ -6,10 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="250.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SQLInterface.LoginController">
+<AnchorPane prefHeight="250.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
       <Button layoutX="183.0" layoutY="167.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
-      <TextField layoutX="124.0" layoutY="86.0" />
-      <TextField layoutX="124.0" layoutY="125.0" />
+      <TextField fx:id="userField" promptText="Username" layoutX="124.0" layoutY="86.0" />
+      <PasswordField fx:id="passwordField" promptText="Password" layoutX="124.0" layoutY="125.0" />
    </children>
 </AnchorPane>
