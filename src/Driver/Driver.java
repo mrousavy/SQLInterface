@@ -11,13 +11,14 @@ public class Driver {
     private static Logger<String> _logger = new JLogger(System.out);
 
     private static String buildConnectionString(String server, String database, String user, String password) {
-        String credentials = "?user=" + user + "&password=" + password + "&useSSL=false";
-        return "jdbc:mysql://" + server + "/" + database + credentials;
+        String credentials = "?user=" + user + "&password=" + password;
+        return "jdbc:mysql://" + server + "/" + database + credentials + "&useSSL=false";
     }
 
     public static Connection connect(String server, String database, String user, String password) throws SQLException {
         _logger.Log(Logger.Severity.Debug, "Connecting...");
         String connectionString = buildConnectionString(server, database, user, password);
+        System.out.println(connectionString);
         return DriverManager.getConnection(connectionString);
     }
 
