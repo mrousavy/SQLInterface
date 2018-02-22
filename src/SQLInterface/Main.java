@@ -6,7 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.Connection;
+
 public class Main extends Application {
+
+    public static Connection _connection;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
