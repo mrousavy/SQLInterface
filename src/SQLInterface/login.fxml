@@ -11,7 +11,7 @@
             fx:controller="Controller.LoginController">
    <children>
       <Button layoutX="183.0" layoutY="167.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
-      <TextField fx:id="userField" promptText="Username" text="insy4" onAction="#loginButton" layoutX="124.0" layoutY="86.0" />
-      <PasswordField fx:id="passwordField" promptText="Password" text="blabla" onAction="#loginButton" layoutX="124.0" layoutY="125.0" />
+      <TextField fx:id="userField" promptText="Username" text="root" onAction="#loginButton" layoutX="124.0" layoutY="86.0" />
+      <PasswordField fx:id="passwordField" promptText="Password" text="root" onAction="#loginButton" layoutX="124.0" layoutY="125.0" />
    </children>
 </AnchorPane>

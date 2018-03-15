@@ -40,7 +40,7 @@ public class LoginController {
             Parent root = FXMLLoader.load(getClass().getResource("../SQLInterface/persanzedit.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Showing tables for " + database);
-            stage.setScene(new Scene(root, 200, 100));
+            stage.setScene(new Scene(root, 200, 200));
             stage.show();
             ((Node)(event.getSource())).getScene().getWindow().hide();
         } catch (SQLException ex) {

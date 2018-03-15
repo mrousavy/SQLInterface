@@ -40,6 +40,23 @@ public class Driver {
         }
     }
 
+    public static boolean kontoExists(Connection connection, int kontoNr) throws SQLException {
+        PreparedStatement ps = null;
+        try {
+            String query = "SELECT * FROM konto WHERE knr = " + kontoNr;
+            ps = connection.prepareStatement(query);
+
+            ResultSet result = ps.executeQuery(query);
+            return result.next();
+        } catch (SQLException ex) {
+            _logger.Log(ex);
+            throw ex;
+        } finally {
+            if (ps != null)
+                ps.close();
+        }
+    }
+
     public static void incrementVersion(Connection connection, int kontoNr) throws SQLException {
         int version = getVersion(connection, kontoNr);
         incrementVersion(connection, kontoNr, version + 1);
@@ -68,6 +85,19 @@ public class Driver {
             ps.executeUpdate();
             ps.close();
             incrementVersion(connection, kontoNr);
+        } catch (SQLException ex) {
+            _logger.Log(ex);
+            throw ex;
+        }
+    }
+
+    public static void deleteKonto(Connection connection, int kontoNr) throws SQLException {
+        try {
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM konto WHERE knr = ?");
+            ps.setInt(1, kontoNr);
+
+            ps.executeUpdate();
+            ps.close();
         } catch (SQLException ex) {
             _logger.Log(ex);
             throw ex;
