@@ -3,7 +3,6 @@ package Controller;
 import Driver.Driver;
 import JavaLogger.JLogger;
 import JavaLogger.Logger;
-import SQLInterface.Controller;
 import SQLInterface.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +27,7 @@ public class LoginController {
 
     @FXML
     public void loginButton(ActionEvent event) {
-        String database = "restaurant4a2017";
+        String database = "tgmbank";
         String server = "172.17.0.2:3306";
         String user = userField.getText();
         String password = passwordField.getText();
@@ -37,10 +36,11 @@ public class LoginController {
             Main._connection = Driver.connect(server, database, user, password);
             _logger.Log(Logger.Severity.Info, "Connected!");
 
-            Parent root = FXMLLoader.load(getClass().getResource("../SQLInterface/tables.fxml"));
+            // TODO: Or show tables.fxml with 1000x500 dim
+            Parent root = FXMLLoader.load(getClass().getResource("../SQLInterface/persanzedit.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Showing tables for " + database);
-            stage.setScene(new Scene(root, 1000, 500));
+            stage.setScene(new Scene(root, 200, 100));
             stage.show();
             ((Node)(event.getSource())).getScene().getWindow().hide();
         } catch (SQLException ex) {
@@ -54,6 +54,7 @@ public class LoginController {
             alert.showAndWait();
         } catch (IOException ex) {
             _logger.Log(Logger.Severity.Error, "Cannot create tables Window!");
+            ex.printStackTrace();
         }
     }
 }

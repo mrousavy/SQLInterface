@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PersAnzController">
+   <children>
+       <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" />
+       <Button layoutX="119.0" layoutY="48.0" onAction="#updateClick" text="Update" />
+       <Button layoutX="57.0" layoutY="48.0" onAction="#fetchClick" text="Fetch" />
+   </children>
+</AnchorPane>
